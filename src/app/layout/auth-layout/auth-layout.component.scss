@@ -1,0 +1,9 @@
+.auth-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; // Make the wrapper span the full height of the viewport
+}
+
+.auth-page-content {
+  flex: 1; // Allow the content to grow and push the footer down
+}

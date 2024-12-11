@@ -1,0 +1,24 @@
+<p-sidebar [visible]="true" [modal]="false" position="left">
+  <p-menu [model]="menuItems"></p-menu>
+</p-sidebar>
+
+<div >
+  <button
+    pButton
+    type="button"
+    label="Go to Home"
+    (click)="updateMenu('Home')"
+  ></button>
+  <button
+    pButton
+    type="button"
+    label="Go to Profile"
+    (click)="updateMenu('Profile')"
+  ></button>
+  <button
+    pButton
+    type="button"
+    label="Go to Settings"
+    (click)="updateMenu('Settings')"
+  ></button>
+</div>

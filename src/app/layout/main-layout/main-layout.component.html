@@ -1,0 +1,13 @@
+<p-panel class="layout-wrapper">
+  <div class="layout-container">
+    <p-panel class="layout-sidebar" [toggleable]="true">
+      <app-sidebar></app-sidebar>
+    </p-panel>
+    <div class="layout-main">
+      <div class="layout-page-content">
+        <router-outlet></router-outlet>
+      </div>
+      <app-footer></app-footer>
+    </div>
+  </div>
+</p-panel>
