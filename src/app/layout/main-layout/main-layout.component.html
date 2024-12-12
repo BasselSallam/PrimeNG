@@ -1,13 +1,12 @@
-<p-panel class="layout-wrapper">
-  <div class="layout-container">
-    <p-panel class="layout-sidebar" [toggleable]="true">
-      <app-sidebar></app-sidebar>
-    </p-panel>
-    <div class="layout-main">
-      <div class="layout-page-content">
-        <router-outlet></router-outlet>
-      </div>
+<div class="flex w-full">
+  <div class="w-1/5">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="w-4/5">
+    <div class="mx-10">
+      <app-header></app-header>
+      <router-outlet></router-outlet>
       <app-footer></app-footer>
     </div>
   </div>
-</p-panel>
+</div>

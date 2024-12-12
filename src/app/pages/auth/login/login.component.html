@@ -1,9 +1,5 @@
-<div
-  class="items-center flex justify-center lg:px-20 md:px-12 px-12 py-20"
->
-  <div
-    class="p-6 shadow rounded border w-full lg:w-6/12"
-  >
+<div class="items-center flex justify-center lg:px-20 md:px-12 px- py-20">
+  <div iv class="p-6 shadow rounded border w-full lg:w-6/12">
     <div class="text-center mb-8">
       <img
         src="assets/images/logos/hyper.svg"
@@ -11,69 +7,58 @@
         height="50"
         class="mb-4"
       />
-      <div
-        class="text-3xl font-medium mb-4"
-      >
-        Welcome Back
-      </div>
-      <span
-        class="font-medium leading-normal"
-        >Don't have an account?</span
-      >
+      <div class="text-3xl font-medium mb-4">Welcome Back</div>
+      <span class="font-medium leading-normal">Don't have an account?</span>
       <a class="font-medium no-underline ml-2 text-blue-500 cursor-pointer"
         >Create today!</a
       >
     </div>
+    <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="email1" class="block font-medium mb-2">Email</label>
+        <input
+          id="email1"
+          type="text"
+          placeholder="Email address"
+          pInputText
+          class="w-full mb-4"
+          formControlName="email"
+        />
 
-    <div>
-      <label
-        for="email1"
-        class="block font-medium mb-2"
-        >Email</label
-      >
-      <input
-        id="email1"
-        type="text"
-        placeholder="Email address"
-        pInputText
-        class="w-full mb-4"
-      />
+        <label for="password1" class="block font-medium mb-2">Password</label>
+        <input
+          id="password1"
+          type="password"
+          placeholder="Password"
+          pInputText
+          class="w-full mb-4"
+          formControlName="password"
+        />
 
-      <label
-        for="password1"
-        class="block font-medium mb-2"
-        >Password</label
-      >
-      <input
-        id="password1"
-        type="password"
-        placeholder="Password"
-        pInputText
-        class="w-full mb-4"
-      />
-
-      <div class="flex items-center justify-between mb-12">
-        <div class="flex items-center">
-          <p-checkbox
-            id="rememberme"
-            [binary]="true"
-            styleClass="mr-2"
-          ></p-checkbox>
-          <label for="rememberme1">Remember me</label>
+        <div class="flex items-center justify-between mb-12">
+          <div class="flex items-center">
+            <p-checkbox
+              id="rememberme"
+              [binary]="true"
+              styleClass="mr-2"
+            ></p-checkbox>
+            <label for="rememberme1">Remember me</label>
+          </div>
+          <a
+            class="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer"
+            >Forgot password?</a
+          >
         </div>
-        <a
-          class="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer"
-          >Forgot password?</a
-        >
-      </div>
 
-      <button
-        pButton
-        pRipple
-        label="Sign In"
-        icon="pi pi-user"
-        class="w-full"
-      ></button>
-    </div>
+        <button
+          pButton
+          pRipple
+          label="Sign In"
+          icon="pi pi-user"
+          class="w-full"
+          type="submit"
+        ></button>
+      </div>
+    </form>
   </div>
 </div>

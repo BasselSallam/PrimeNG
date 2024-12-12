@@ -1,50 +1,36 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
+import { ButtonModule } from 'primeng/button';
 import { MenuModule } from 'primeng/menu';
 import { SidebarModule } from 'primeng/sidebar';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [SidebarModule,MenuModule],
+  imports: [
+    SidebarModule,
+    MenuModule,
+    RouterModule,
+    ButtonModule,
+    CommonModule,
+  ],
   templateUrl: './sidebar.component.html',
-  styleUrl: './sidebar.component.scss',
+  styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent {
-  menuItems: any[] = [];
+  sidebarVisible = true;
 
-  pages = [
-    {
-      page: 'Home',
-      menuItem: [
-        { label: 'Dashboard', icon: 'pi pi-home', routerLink: '/' },
-      ],
-    },
-    {
-      page: 'Profile',
-      menuItem: [
-        {
-          label: 'Edit Profile',
-          icon: 'pi pi-user-edit',
-          routerLink: '/profile',
-        },
-      ],
-    },
-    {
-      page: 'Settings',
-      menuItem: [
-        { label: 'Configuration', icon: 'pi pi-cog', routerLink: '/settings' },
-      ],
-    },
+  menuItems = [
+    { label: 'Dashboard', route: '/dashboard' },
+    { label: 'Profile', route: '/profile' },
+    { label: 'Settings', route: '/settings' },
+    { label: 'Help', route: '/help' },
   ];
 
-  // Simulate page change and update sidebar menu
-  updateMenu(page: string) {
-    const selectedPage = this.pages.find((p) => p.page === page);
-    this.menuItems = selectedPage ? selectedPage.menuItem : [];
-  }
+  constructor(private router: Router) {}
 
-  // Initialize with default menu
-  ngOnInit() {
-    this.updateMenu('Home');
+  navigateTo(route: string): void {
+    this.router.navigate([route]);
   }
 }

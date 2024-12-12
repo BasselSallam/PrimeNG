@@ -7,7 +7,7 @@ export const routes: Routes = [
     path: '',
     loadComponent: () => MainLayoutComponent,
     loadChildren: () =>
-      import('./pages/dashboard/pages.routes').then((mod) => mod.PAGES_ROUTES),
+      import('./pages/pages.routes').then((mod) => mod.PAGES_ROUTES),
   },
   {
     path: 'auth',

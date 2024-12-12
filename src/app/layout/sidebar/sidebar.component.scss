@@ -1,3 +1,27 @@
-p-sidebar {
-  width: 250px;
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  margin: 0.5rem 0;
+}
+
+.menu-link {
+  text-decoration: none;
+  color: #007bff;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: block;
+  border-radius: 5px;
+}
+
+.menu-link:hover {
+  background-color: #f0f0f0;
+}
+
+.active-link {
+  color: white;
+  font-weight: bold;
 }

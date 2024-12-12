@@ -1,24 +1,23 @@
-<p-sidebar [visible]="true" [modal]="false" position="left">
-  <p-menu [model]="menuItems"></p-menu>
+<p-sidebar [(visible)]="sidebarVisible" styleClass="w-1/5" [modal]="false">
+  <ng-template pTemplate="header">Header Content</ng-template>
+  <ng-template pTemplate="content">
+    <ul class="menu">
+      <li *ngFor="let item of menuItems">
+        <a
+          [routerLink]="item.route"
+          routerLinkActive="active-link"
+          class="menu-link"
+        >
+          {{ item.label }}
+        </a>
+      </li>
+    </ul>
+  </ng-template>
+  <ng-template pTemplate="footer">Footer Content</ng-template>
 </p-sidebar>
 
-<div >
-  <button
-    pButton
-    type="button"
-    label="Go to Home"
-    (click)="updateMenu('Home')"
-  ></button>
-  <button
-    pButton
-    type="button"
-    label="Go to Profile"
-    (click)="updateMenu('Profile')"
-  ></button>
-  <button
-    pButton
-    type="button"
-    label="Go to Settings"
-    (click)="updateMenu('Settings')"
-  ></button>
-</div>
+<p-button
+  (click)="sidebarVisible = true"
+  icon="pi pi-arrow-right"
+  label="Show Sidebar"
+></p-button>
